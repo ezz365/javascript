@@ -33,15 +33,13 @@ function mostrarHamburger(hamburgers) {
       <img src="${hamburger.imagen}" alt="${hamburger.titulo}">
       <h3>${hamburger.titulo}</h3>
       <p>Descripción: ${hamburger.descripcion}</p>
+      <hr>
     `;
     //SE CREA EL BOTON ADICIONAL
-    const botonAdicional = crearAdicional(hamburger)
-    divHamburger.appendChild(botonAdicional);
     //SE CREA EL DIV
     cardHamburgers.appendChild(divHamburger);
   })
 }  
-
 mostrarHamburger(hamburgers);
 
 //---SE CREA EL ARRAY HAMBURGUESAS---
@@ -71,6 +69,40 @@ const hamburguesas = [
 function crearAdicional(hamburger){
     const button = document.createElement("button"); //se crea un <button>
     button.innerText = "Crear combo"; //se pone el contenido del button
+    button.addEventListener("submit", manejadorComboUsuario);
+
+    let nombreCliente;
+        
+    function manejadorComboUsuario(e) {
+            console.log(e);
+            e.preventDefault();
+            nombreCliente = document.getElementById("user").value;
+
+            const form = document.createElement("form");
+            form.innerHTML = `
+            <form id="formulario-usuario">
+            <label for="user">Escribe como queres tu combo:</label>
+            <input id="carne" type="text" placeholder="Carnes">
+            <input id="papas" type="text" placeholder="Papas">
+            <input id="bebida" type="text" placeholder="Bebidas">
+            <input type="submit" value="Buscar">
+            <hr>
+            </form>`;
+          
+            const listadoDeCombos = document.getElementById("listadoDeCombos");
+            const combos = JSON.parse(localStorage.getItem(nombreCliente));
+          
+            if (combos == null) {
+                listadoDeCombos.innerHTML = "<h1>No hay combos</h1>"
+            } else {
+              mostrarCombos(combos);
+            }
+            mostrarPanel();
+          }
+
+    }
+
+    
     button.addEventListener("click",() => {
             do{
         choices = prompt(
@@ -100,7 +132,7 @@ function crearAdicional(hamburger){
     }while(choices !== '0');   
     })
     return button;
-}
+
 
 //---SE CREA LA FUNCION AddToBurgers PARA PUSHEAR LAS PROPIEDADES Y QUE SALTE EN LA CONSOLA---
 function addToBurgers(id, carne, papas, gaseosa){
