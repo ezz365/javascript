@@ -6,13 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Java-script</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body bgcolor="brown">
+<div id="formulario-combo">
+    <form id="formulario">
+        <h1>Arma el combo a tu manera</h1>
+        <label for="form">Escribe como queres tu combo:</label>
+        <input id="user" type="text" placeholder="Nombre">
+        <input id="carne" type="text" placeholder="Carnes">
+        <input id="papas" type="text" placeholder="Papas">
+        <input id="bebida" type="text" placeholder="Bebidas">
+        <input id="submit" type="submit" value="Aceptar">
+        <hr>
+    </form>
+</div>
 
+<ul id="combosCreados" class="displayNone"></ul>
 
 <div class="card-hamburgers"></div>
-<form class="formulario-combo"></form>
-<div id="listadoDeCombos"></div>
   
 <script src="js/miarchivo.js"></script>
 </body>
