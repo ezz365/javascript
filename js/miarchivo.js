@@ -72,12 +72,7 @@ function manejadorComboUsuario(e) {
     combos == null ? combosCreados.innerHTML = "<li>No hay combo</li>" : mostrarCombos(combos);
 }
 
-/* IF-ELSE REEMPLAZADO POR EL TERNARIO    
-if(combos == null){
-    combosCreados.innerHTML = "<h1>No hay combo</h1>"
-}else{
-    mostrarCombos(combos);
-}*/
+
 
 //FUNCION MOSTRARCOMBOS QUE CREA EL IL DENTRO DEL UL "combosCreados"
 function mostrarCombos(combos) {
@@ -86,7 +81,7 @@ function mostrarCombos(combos) {
   
     combos.forEach(combo => {
       let li = document.createElement("li");
-      li.innerHTML = `<hr> ${combo.carne} ${combo.papas} ${combo.bebida}`;
+      li.innerHTML = `PEDIDO:  ${combo.carne} + ${combo.papas} + ${combo.bebida}` ;
       const botonCancelar = crearBotonCancelar(combo);
       li.appendChild(botonCancelar);
       combosCreados.appendChild(li);
@@ -105,10 +100,24 @@ function crearBotonCancelar(combo){
 
 document.getElementById("formulario-combo").addEventListener("submit", agregarCombo);
 
-//FUNCION PARA VALIDAR EL COMBO (CON OPERADOR TERNARIO)
+/*FUNCION PARA VALIDAR EL COMBO (CON OPERADOR TERNARIO)
 function validarCombos(combo) {
     combo.carne == "" ? alert("No puede estar vacio") : alert("Combo creado con exito");
-}
+}*/
+
+
+//IF-ELSE con SweetAlert2
+function validarCombos(combo) {  
+if(combo.carne == ""){
+    const displayBlock = querySelector(".displayNone");
+}else{
+    Swal.fire({
+        title:'Bien hecho',
+        text: 'Combo creado con exito',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+    })
+}}
 
 //FUNCION PARA SETEAR EL COMBO
 function agregarCombo(e){

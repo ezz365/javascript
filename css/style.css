@@ -19,6 +19,7 @@ body{
 #combosCreados{
     font-weight: bolder;
     list-style: none;
+    padding-bottom: 2%;
 }
 
 .displayNone{
