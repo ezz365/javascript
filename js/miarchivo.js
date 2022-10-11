@@ -206,8 +206,7 @@ document.getElementById('submit').addEventListener("click", ()=>{
                     combos.forEach(({carne, papas, bebida}) => {
                         let div = document.createElement("div");
                         div.innerHTML = `
-                            <hr> 
-                            ${nombre} - 
+                            <hr>  
                             ${carne && carne} - 
                             ${papas && papas} -
                             ${bebida && bebida}`;
