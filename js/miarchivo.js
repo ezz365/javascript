@@ -196,3 +196,24 @@ function ultimoID(){
 function listaHamburguesas(){
     hamburguesas.forEach((hamburguesa) => console.log(hamburguesa.id + " - " + hamburguesa.carne + " - " + hamburguesa.papas + " - " + hamburguesa.gaseosa));
 }
+
+//FETCH
+document.getElementById('submit').addEventListener("click", ()=>{
+    const contenedorResultado = document.getElementById("resultado-busqueda");
+        fetch('./json/data.json')
+                .then(res => res.json())
+                .then(combos => {
+                    combos.forEach(({carne, papas, bebida}) => {
+                        let div = document.createElement("div");
+                        div.innerHTML = `
+                            <hr> 
+                            ${nombre} - 
+                            ${carne && carne} - 
+                            ${papas && papas} -
+                            ${bebida && bebida}`;
+                            
+                            contenedorResultado.appendChild(div);
+                    });
+                })
+    }
+)
