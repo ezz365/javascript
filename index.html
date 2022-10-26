@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Java-script</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,9 +13,10 @@
 <div id="formulario-combo">
     <form id="formulario">
         <h1>Arma el combo a tu manera</h1>
-        <label for="form">Escribe como queres tu combo:</label>
-        <input id="user" type="text" placeholder="Nombre">
-        <input id="carne" type="text" placeholder="Carnes">
+        <h4>Elige alguna de las hamburguesas indicadas abajo y sus respectivos acompañamientos!</h4>
+        <label for="form">Escribe como queres armar tu combo:</label>
+        <input id="user" type="text" placeholder="Nombre del cliente">
+        <input id="carne" type="text" placeholder="Hamburguesa">
         <input id="papas" type="text" placeholder="Papas">
         <input id="bebida" type="text" placeholder="Bebidas">
         <input id="submit" type="submit" value="Aceptar">
@@ -23,6 +25,8 @@
 </div>
 
 <ul id="combosCreados" class="displayNone"></ul>
+
+<div id="resultado-busqueda" class="mx-5"></div>
 
 <div class="card-hamburgers"></div>
   

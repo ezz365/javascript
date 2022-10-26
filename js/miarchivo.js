@@ -8,9 +8,12 @@ class Hamburger {
 }
 
 //SE CREAN CONSTANTES HAMBURGERS
-const hamburger1 = new Hamburger("Hamburguesa 1", "img/cardburger1.png", "Hamburguesa 1 + Papas + Coca-Cola")
-const hamburger2 = new Hamburger("Hamburguesa 2", "img/cardburger2.png", "Hamburguesa 2 + Papas Cheddar + Fanta" )
-const hamburger3 = new Hamburger("Hamburguesa 3", "img/cardburger3.png", "Hamburguesa 3 + Papas Rusticas + Agua" )
+const hamburger1 = new Hamburger("Cheese Burger", "img/cardburger1.png", "Cheese Burger + Papas + Bebida")
+const hamburger2 = new Hamburger("Bondiola Burger", "img/cardburger2.png", "Bondiola Burger + Papas + Bebida" )
+const hamburger3 = new Hamburger("American Burger", "img/cardburger3.png", "American Burger + Papas + Bebida" )
+const hamburger4 = new Hamburger("Full Burger", "img/cardburger4.png", "Full Burger + Papas + Bebida" )
+const hamburger5 = new Hamburger("Chicken Crispy", "img/cardburger5.png", "Chicken Crispy + Papas + Bebida" )
+
                                                                                                                                                             
 //SE CREA EL ARRAY
 const hamburgers = []
@@ -19,12 +22,15 @@ const hamburgers = []
 hamburgers.push(hamburger1);
 hamburgers.push(hamburger2);
 hamburgers.push(hamburger3);
+hamburgers.push(hamburger4);
+hamburgers.push(hamburger5);
+
 
 //FUNCION MOSTRAR HAMBURGUESAS EN HTML
 function mostrarHamburger(hamburgers) {
 
   const cardHamburgers = document.querySelector(".card-hamburgers");
-  cardHamburgers.innerHTML = "";
+  cardHamburgers.innerHTML = "<h1>Menu: lista de hamburguesas</h1>";
   //PARA CADA UNA DE LAS CARDS
   hamburgers.forEach(hamburger => {
     const divHamburger = document.createElement("div"); 
@@ -33,7 +39,6 @@ function mostrarHamburger(hamburgers) {
       <img src="${hamburger.imagen}" alt="${hamburger.titulo}">
       <h3>${hamburger.titulo}</h3>
       <p>Descripción: ${hamburger.descripcion}</p>
-      <button class="btn" type="submit">Elegir combo (No disponible)</button>
       <hr>
     `;
     //SE CREA EL BOTON ADICIONAL
@@ -81,7 +86,7 @@ function mostrarCombos(combos) {
   
     combos.forEach(combo => {
       let li = document.createElement("li");
-      li.innerHTML = `PEDIDO:  ${combo.carne} + ${combo.papas} + ${combo.bebida}` ;
+      li.innerHTML = `PEDIDO:  ${combo.carne} + ${combo.papas} + ${combo.bebida}`;
       const botonCancelar = crearBotonCancelar(combo);
       li.appendChild(botonCancelar);
       combosCreados.appendChild(li);
@@ -200,16 +205,19 @@ function listaHamburguesas(){
 //FETCH
 document.getElementById('submit').addEventListener("click", ()=>{
     const contenedorResultado = document.getElementById("resultado-busqueda");
+    contenedorResultado.innerHTML = "<h3>Otras recomendaciones</h3>";
         fetch('./json/data.json')
                 .then(res => res.json())
                 .then(combos => {
                     combos.forEach(({carne, papas, bebida}) => {
                         let div = document.createElement("div");
-                        div.innerHTML = `
-                            <hr>  
+                        div.innerHTML = `   
+                            <hr>
                             ${carne && carne} - 
                             ${papas && papas} -
-                            ${bebida && bebida}`;
+                            ${bebida && bebida}
+                            <hr>
+                            `;
                             
                             contenedorResultado.appendChild(div);
                     });

@@ -18,8 +18,11 @@ body{
 
 #combosCreados{
     font-weight: bolder;
+    font-size: large;
     list-style: none;
     padding-bottom: 2%;
+    display: flex;
+    justify-content: start;
 }
 
 .displayNone{

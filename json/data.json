@@ -1,26 +1,32 @@
 [
     {
-        "nombre": "Leonardo",
-        "carne": "Carne",
-        "papas": "Cheddar",
+        "nombre": "Combo 1",
+        "carne": "Paty de Res",
+        "papas": "Papas con Cheddar",
+        "bebida": "Coca-cola"
+    },
+    {
+        "nombre": "Combo 2",
+        "carne": "Paty de Pollo",
+        "papas": "Papas Rusticas",
+        "bebida": "Fanta"
+    },
+    {
+        "nombre": "Combo 3",
+        "carne": "Paty de Lenteja",
+        "papas": "Papas con Verdeo",
+        "bebida": "Aquarius"
+    },
+    {
+        "nombre": "Combo 4",
+        "carne": "Paty de Soja",
+        "papas": "Papas al Horno",
         "bebida": "Agua"
     },
     {
-        "nombre": "Marcos",
-        "carne": "Carne",
-        "papas": "Cheddar",
-        "bebida": "Agua"
-    },
-    {
-        "nombre": "Laura",
-        "carne": "Carne",
-        "papas": "Cheddar",
-        "bebida": "Agua"
-    },
-    {
-        "nombre": "Ramiro",
-        "carne": "Carne",
-        "papas": "Cheddar",
-        "bebida": "Agua"
+        "nombre": "Combo 5",
+        "carne": "Medallon de pescado",
+        "papas": "Papas con huevo frito",
+        "bebida": "Fanta"
     }
 ]
