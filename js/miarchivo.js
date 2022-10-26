@@ -86,7 +86,7 @@ function mostrarCombos(combos) {
   
     combos.forEach(combo => {
       let li = document.createElement("li");
-      li.innerHTML = `PEDIDO:  ${combo.carne} + ${combo.papas} + ${combo.bebida}`;
+      li.innerHTML = `PEDIDO:  ${combo.carne} + ${combo.papas} + ${combo.bebida}  `;
       const botonCancelar = crearBotonCancelar(combo);
       li.appendChild(botonCancelar);
       combosCreados.appendChild(li);
